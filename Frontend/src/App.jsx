@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { AuthProvider } from './context/AuthContext';
-import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -21,31 +20,29 @@ function App() {
 
   return (
     <GoogleOAuthProvider clientId={googleClientId}>
-      <ThemeProvider>
-        <AuthProvider>
-          <Router>
-            <div className="app">
-              <Navbar />
-              <main>
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/login" element={<LoginPage />} />
-                  <Route path="/signup" element={<SignupPage />} />
-                  <Route 
-                    path="/dashboard" 
-                    element={
-                      <ProtectedRoute>
-                        <DashboardPage />
-                      </ProtectedRoute>
-                    } 
-                  />
-                  <Route path="*" element={<NotFoundPage />} />
-                </Routes>
-              </main>
-            </div>
-          </Router>
-        </AuthProvider>
-      </ThemeProvider>
+      <AuthProvider>
+        <Router>
+          <div className="app">
+            <Navbar />
+            <main>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route 
+                  path="/dashboard" 
+                  element={
+                    <ProtectedRoute>
+                      <DashboardPage />
+                    </ProtectedRoute>
+                  } 
+                />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </main>
+          </div>
+        </Router>
+      </AuthProvider>
     </GoogleOAuthProvider>
   );
 }
