@@ -2,6 +2,27 @@
 
 A personal finance management platform to track income, expenses, and visualize spending patterns with an interactive dashboard.
 
+# 📸 Screenshots
+
+### Landing Page
+![Landing Page](./screenshots/landingpage.png)
+
+### Footer Component
+![Footer](./screenshots/Footer.png)
+
+### Signup Page
+![Signup Page](./screenshots/signuppage.png)
+
+### Login Page
+![Login Page](./screenshots/loginpage.png)
+
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+### Dashboard Footer
+![Dashboard Footer](./screenshots/dashboardFooter.png)
+
+
 ## 🎯 Features
 
 - Email/Password & Google OAuth authentication
